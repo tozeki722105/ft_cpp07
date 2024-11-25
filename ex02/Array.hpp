@@ -84,7 +84,7 @@ template <typename T>
 void Array<T>::checkIndex(unsigned int id)
 {
 	if (id >= _size)
-		throw std::exception("Invalid Index");
+		throw std::out_of_range("Invalid Index");
 }
 
 template <typename T>
