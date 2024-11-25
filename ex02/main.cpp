@@ -29,7 +29,7 @@ int main()
 			for (unsigned int i = 0; i < eqIArray.size(); i++) {
 				std::cout << i << ": " << eqIArray[i] << std::endl;
 			}
-			std::cout << "test end" << std::endl;	
+			std::cout << "test end" << std::endl;
 		} catch (std::exception &e) {
 			std::cout << "error: " << e.what() << std::endl;
 		}
@@ -44,7 +44,7 @@ int main()
 			for (unsigned int i = 0; i < sArray.size(); i++) {
 				std::cout << i << ": " << sArray[i] << std::endl;
 			}
-			
+
 			std::cout << "copy test" << std::endl;
 			Array<std::string> cpSArray(sArray);
 			for (unsigned int i = 0; i < cpSArray.size(); i++) {
@@ -70,7 +70,7 @@ int main()
 			for (unsigned int i = 0; i < csArray.size(); i++) {
 				std::cout << i << ": " << csArray[i] << std::endl;
 			}
-			
+
 			// std::cout << "copy test" << std::endl;
 			// Array<const std::string> cpCsArray(csArray);
 			// for (unsigned int i = 0; i < cpCsArray.size(); i++) {
