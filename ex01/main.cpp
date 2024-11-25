@@ -7,15 +7,21 @@ void add32(T &val)
 {
 	val += 32;
 }
+template <>
+void add32<std::string>(std::string &val)
+{
+	val += "32";
+}
 }  // namespace test
+
+#define COMMON_SIZE 3
 
 int main()
 {
 	{
-		size_t size = 3;
 		int array[3] = {0, 1, 2};
-		ft::iter(array, size, test::add32);
-		for (size_t i = 0; i < size; i++) {
+		ft::iter(array, 3, test::add32);
+		for (size_t i = 0; i < 3; i++) {
 			std::cout << i << ": " << array[i] << std::endl;
 		}
 	}
@@ -33,6 +39,14 @@ int main()
 		ft::iter<char>(&str[0], str.length(), NULL);
 		for (size_t i = 0; i < str.length(); i++) {
 			std::cout << i << " " << str[i] << std::endl;
+		}
+	}
+	std::cout << std::endl;
+	{
+		std::string strings[COMMON_SIZE] = {"ABCDEFG", "HIJKLMN"};
+		ft::iter(strings, 2, test::add32);
+		for (size_t i = 0; i < 2; i++) {
+			std::cout << i << " " << strings[i] << std::endl;
 		}
 	}
 }
