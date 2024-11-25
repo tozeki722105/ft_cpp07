@@ -13,11 +13,11 @@ public:
 	Array(unsigned int size);
 	~Array();
 	Array(const Array<T> &other);
-	T &operator=(const Array<T> &other);
+	Array<T> &operator=(const Array<T> &other);
 
 	T &operator[](unsigned int id);
 	const T &operator[](unsigned int id) const;
-	void checkIndex(unsigned int id);
+	void checkIndex(unsigned int id) const;
 	unsigned int size() const;
 };
 
@@ -41,13 +41,13 @@ Array<T>::~Array()
 }
 
 template <typename T>
-Array<T>::Array(const Array<T> &other)
+Array<T>::Array(const Array<T> &other) : _data(NULL)
 {
 	*this = other;
 }
 
 template <typename T>
-T &Array<T>::operator=(const Array<T> &other)
+Array<T> &Array<T>::operator=(const Array<T> &other)
 {
 	if (this == &other)
 		return *this;
@@ -81,7 +81,7 @@ const T &Array<T>::operator[](unsigned int id) const
 }
 
 template <typename T>
-void Array<T>::checkIndex(unsigned int id)
+void Array<T>::checkIndex(unsigned int id) const
 {
 	if (id >= _size)
 		throw std::out_of_range("Invalid Index");
