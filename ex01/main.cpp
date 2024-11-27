@@ -12,6 +12,11 @@ void add32<std::string>(std::string &val)
 {
 	val += "32";
 }
+template <typename T>
+void print(const T &val)
+{
+	std::cout << val << std::endl;
+}
 }  // namespace test
 
 #define COMMON_SIZE 3
@@ -48,5 +53,10 @@ int main()
 		for (size_t i = 0; i < 2; i++) {
 			std::cout << i << " " << strings[i] << std::endl;
 		}
+	}
+	std::cout << std::endl;
+	{
+		const std::string strings[COMMON_SIZE] = {"ABCDEFG", "HIJKLMN"};
+		ft::iter(strings, 2, test::print);
 	}
 }
