@@ -19,8 +19,6 @@ void print(const T &val)
 }
 }  // namespace test
 
-#define COMMON_SIZE 3
-
 int main()
 {
 	{
@@ -48,7 +46,7 @@ int main()
 	}
 	std::cout << std::endl;
 	{
-		std::string strings[COMMON_SIZE] = {"ABCDEFG", "HIJKLMN"};
+		std::string strings[2] = {"ABCDEFG", "HIJKLMN"};
 		ft::iter(strings, 2, test::add32);
 		for (size_t i = 0; i < 2; i++) {
 			std::cout << i << " " << strings[i] << std::endl;
@@ -56,7 +54,7 @@ int main()
 	}
 	std::cout << std::endl;
 	{
-		const std::string strings[COMMON_SIZE] = {"ABCDEFG", "HIJKLMN"};
+		const std::string strings[2] = {"ABCDEFG", "HIJKLMN"};
 		ft::iter(strings, 2, test::print);
 	}
 }
