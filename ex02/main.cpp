@@ -4,8 +4,14 @@
 
 #define COMMON_SIZE 3
 
+// void checkLeaks()
+// {
+// 	system("leaks -q a.out");
+// }
+
 int main()
 {
+	// atexit(checkLeaks);  // 処理の頭に呼び出す
 	std::cout << "<<int>>" << std::endl;
 	{
 		try {

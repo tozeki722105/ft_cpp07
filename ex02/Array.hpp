@@ -1,6 +1,10 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
+#include <cstdlib>
+#include <ctime>
+#include <stdexcept>
+
 template <typename T>
 class Array
 {
