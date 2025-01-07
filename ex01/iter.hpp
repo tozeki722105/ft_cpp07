@@ -1,10 +1,8 @@
-#ifndef TEMPLATE_HPP
-#define TEMPLATE_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
-#include <iostream>
+#include <cstddef>
 
-namespace ft
-{
 template <typename T>
 void iter(T *array, size_t length, void (*func)(T &))
 {
@@ -23,6 +21,5 @@ void iter(const T *array, size_t length, void (*func)(const T &))
 		func(array[i]);
 	}
 }
-}  // namespace ft
 
 #endif
