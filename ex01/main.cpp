@@ -30,17 +30,17 @@ int main()
 	}
 	std::cout << std::endl;
 	{
-		std::string str = "ABCDEFG";
-		::iter(&str[0], str.length(), ::add32);
-		for (size_t i = 0; i < str.length(); i++) {
+		char str[] = "ABCDEFG";
+		::iter(str, strlen(str), ::add32);
+		for (size_t i = 0; i < strlen(str); i++) {
 			std::cout << i << " " << str[i] << std::endl;
 		}
 	}
 	std::cout << std::endl;
 	{
-		std::string str = "ABCDEFG";
-		::iter<char>(&str[0], str.length(), NULL);
-		for (size_t i = 0; i < str.length(); i++) {
+		char str[] = "ABCDEFG";
+		::iter<char>(str, strlen(str), NULL);  // NULL入れるため型宣言
+		for (size_t i = 0; i < strlen(str); i++) {
 			std::cout << i << " " << str[i] << std::endl;
 		}
 	}

@@ -12,6 +12,7 @@ void iter(T *array, size_t length, void (*func)(T &))
 		func(array[i]);
 	}
 }
+
 template <typename T>
 void iter(const T *array, size_t length, void (*func)(const T &))
 {
