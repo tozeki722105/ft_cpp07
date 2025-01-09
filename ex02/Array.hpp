@@ -34,7 +34,7 @@ template <typename T>
 Array<T>::Array(unsigned int size) : _data(NULL), _size(size)
 {
 	if (_size != 0)
-		_data = new T[_size];
+		_data = new T[_size]();
 }
 
 template <typename T>
@@ -63,7 +63,7 @@ Array<T> &Array<T>::operator=(const Array<T> &other)
 		_data = NULL;
 		return *this;
 	}
-	_data = new T[_size];
+	_data = new T[_size]();
 	for (unsigned int i = 0; i < _size; i++) {
 		_data[i] = other[i];
 	}

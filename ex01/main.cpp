@@ -1,6 +1,8 @@
 #include <iostream>
+#include <cstring>
 
 #include "iter.hpp"
+
 
 // test func
 template <typename T>
